@@ -53,7 +53,7 @@ def suma_binaria():
      suma_binaria = bin(suma_decimal)  # bin() devuelve una cadena como '0b10111'
 
 # Imprimir el resultado sin el prefijo '0b'
-     print(suma_binaria[2:])
+     print("El resultado de la suma es: ", suma_binaria[2:])
 
 
 def resta_binaria():
@@ -66,7 +66,7 @@ def resta_binaria():
      resta_binaria = bin(resta_decimal)  # bin() devuelve una cadena como '0b10111'
 
 # Imprimir el resultado sin el prefijo '0b'
-     print(resta_binaria[2:])
+     print("El resultado de la resta es: ", resta_binaria[2:])
 
 
 while True:
@@ -74,7 +74,8 @@ while True:
     print("2. Convertir un número binario a decimal.")
     print("3. Sumar dos números binarios.")
     print("4. Restar dos número binario.")
-    print("5. Salir")
+    print("5. Contador binario.")
+    print("6. Salir")
     opcion = input("Ingrese una opción: ")
 
     if opcion == "1":
@@ -94,7 +95,21 @@ while True:
         resta_binaria()
         print('-------------------------*********************--------------------------')
     elif opcion == "5":
+        import time
+
         print('Ha ingresado la opción 5')
+        
+        for i in range(1,16):
+            binario = ""
+            n = i
+            while n > 0:
+                binario = str(n % 2) + binario
+                n = n // 2
+            print(binario)
+            time.sleep(1)
+
+    elif opcion == "6":
+        print('Ha ingresado la opción 6.')
         print('Hasta luego!')
         break
     else:
