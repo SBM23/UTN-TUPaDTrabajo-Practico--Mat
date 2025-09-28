@@ -12,7 +12,7 @@ while True:
     if opcion == "1":
         print('Ha ingresado la opción 1')
         resto = [] 
-    
+        import time 
         num = int(input('Ingrese el número decimal que desea convertir a binario: '))    
   
         while num >= 2:  #mientras que el numero sea mayor que 2 debo seguir dividiendo e ir guardando el residuo.
@@ -21,16 +21,18 @@ while True:
             resto.append(0)
           else:
             resto.append(1)
-            
+        
+          time.sleep(3)
           print(num, '/ 2 =', num // 2, ', residuo =', num % 2)
 
           num = num // 2 
-         
+        else:
+            print(num) 
         resto.append(num)
-     
-        print(' número binario es:', "".join(map(str, resto[::-1])))
+        time.sleep(3)
+        print(' Número binario es:', "".join(map(str, resto[::-1])))
         print(f"{num} es menor que 2, se agrega directamente.")
-    
+        input('Ingrese una tecla para continuar')
         print('-------------------------*********************--------------------------')
     elif opcion == "2":
         print('Ha ingresado la opción 2')
@@ -50,16 +52,27 @@ while True:
 
         print('-------------------------*********************--------------------------')
     elif opcion == "3":
+        
         print('Ha ingresado la opción 3')
         bin1 = input('Ingrese el primer número binario: ') # 10 en decimal
+        decimal_1 = int(bin1, 2)
+        print(f"El numero ingresado de binario a decimal es: {decimal_1}")
+
+
         bin2 = input('Ingrese el segundo número binario: ')   # 13 en decimal
+        decimal_2 = int(bin2, 2)
+        print(f"El numero ingresado de binario a decimal es: {decimal_2}")
 
                # Convertir binario a decimal, sumar, y volver a binario
-        suma_decimal = int(bin1, 2) + int(bin2, 2)
+        suma_decimal = decimal_1 + decimal_2
+        print(f"El resultado de la suma decimal es: {suma_decimal}")    
         suma_binaria = bin(suma_decimal)  # bin() devuelve una cadena como '0b10111'
 
             # Imprimir el resultado sin el prefijo '0b'
+        
         print("El resultado de la suma es: ", suma_binaria[2:])
+
+       
 
         print('-------------------------*********************--------------------------')
     elif opcion == "4":
